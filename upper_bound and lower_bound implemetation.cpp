@@ -3,18 +3,19 @@
 using namespace std;
 
 int upperr_bound(vector<int>&v,int x){
+	
 	int L=0,R=int(v.size()-1),ans=int(v.size());
 
 	while(L<=R){
 		int mid = (L+R)>>1;
-		if(v[mid] > x){
-
-			ans=mid;
+		if(v[mid] > x)
+		{	
 			R  =mid -1;
 
 		}
 		else
 		{
+			ans=mid;
 			L=mid+1;
 		}
 	}
@@ -22,13 +23,16 @@ int upperr_bound(vector<int>&v,int x){
 }
 
 int lowerr_bound(vector<int>&v, int x){
+	
 	int L=0,R=int(v.size()-1),ans=int(v.size());
 
 	while(L<=R){
+		
 		int mid = (L+R)>>1;
-		if(v[mid] >= x){
+		if(v[mid] >= x)
+		{
       
-      ans=mid;
+     			ans=mid;
 			R=mid-1;
 
 		}
